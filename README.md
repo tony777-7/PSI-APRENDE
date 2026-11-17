@@ -12,77 +12,69 @@ Alan Gutierrez Ali
 
 Descripción del proyecto
 
-Prototipo académico desarrollado para PSIAPRENDE, un centro de atención psicológica y psicopedagógica de Cochabamba. Su objetivo es facilitar el registro, búsqueda y seguimiento de pacientes mediante un sistema digital centralizado, utilizando únicamente datos ficticios.
+El proyecto consiste en desarrollar un programa básico para PSIAPRENDE que permita registrar, organizar y buscar información de pacientes. Se utilizarán datos ficticios y una base de datos para facilitar el manejo de registros.
 
 Requerimientos funcionales
 
-RF1: Registrar, buscar, modificar y consultar pacientes.
+RF1: Registrar nuevos pacientes.
 
-RF2: Administrar información de los profesionales.
+RF2: Buscar pacientes por nombre.
 
-RF3: Registrar citas y sesiones.
+RF3: Modificar información de pacientes.
 
-RF4: Consultar el historial de seguimiento.
+RF4: Registrar profesionales y sesiones.
 
-RF5: Gestionar usuarios y permisos.
-
-RF6: Generar reportes básicos.
+RF5: Consultar los registros guardados.
 
 Requerimientos no funcionales
 
-RNF1: Interfaz sencilla y fácil de utilizar.
+RNF1: El programa debe ser fácil de utilizar.
 
-RNF2: Acceso mediante usuarios autorizados.
+RNF2: Los formularios deben ser claros y ordenados.
 
-RNF3: Búsqueda rápida de información.
+RNF3: Debe mostrar mensajes cuando se ingresen datos incorrectos.
 
-RNF4: Validación y protección de datos.
-
-RNF5: Compatibilidad con Windows 10 y 11.
+RNF4: La información debe guardarse correctamente en la base de datos.
 
 Tecnologías utilizadas
 
-Lenguaje: C#
+C#: Lenguaje de programación.
 
-Entorno: Visual Studio
+Visual Studio: Desarrollo del programa.
 
-Interfaz: Windows Forms
+Windows Forms: Diseño de formularios.
 
-Base de datos: MySQL y MySQL Workbench
+MySQL: Base de datos.
 
-Control de versiones: Git y GitHub
+Git y GitHub: Guardar y compartir el código.
 
-Organización: Trello
+Trello: Organización de tareas.
 
-Diagramas: Draw.io
+Draw.io: Diagramas del sistema.
 
 Principios SOLID
 
-Son cinco principios para desarrollar código organizado y fácil de mantener:
+S: Cada clase tiene una responsabilidad.
 
-S: Responsabilidad única.
+O: Permite agregar funciones sin cambiar demasiado el código.
 
-O: Abierto/cerrado.
+L: Las clases derivadas pueden reemplazar a las clases principales.
 
-L: Sustitución de Liskov.
+I: Utilizar interfaces con funciones específicas.
 
-I: Segregación de interfaces.
-
-D: Inversión de dependencias.
+D: Evitar depender directamente de otras clases.
 
 Pilares de POO
 
-Encapsulamiento: Protege y controla el acceso a los datos.
+Encapsulamiento: Controlar el acceso a los datos.
 
-Abstracción: Oculta detalles internos del funcionamiento.
+Abstracción: Mostrar solamente la información necesaria.
 
-Herencia: Permite reutilizar características de otras clases.
+Herencia: Reutilizar propiedades y métodos de otras clases.
 
-Polimorfismo: Permite diferentes comportamientos mediante una misma operación.
+Polimorfismo: Utilizar un mismo método con diferentes comportamientos.
 
 Estado del proyecto
 
-En fase de diseño y desarrollo inicial. Se cuenta con el diagnóstico institucional, los requerimientos y los diagramas de base de datos. Las funciones del prototipo están pendientes de implementación y pruebas.
-
-
+Actualmente se está trabajando en el diseño de la base de datos y la organización del programa. Las funcionalidades se desarrollarán progresivamente utilizando datos ficticios.
 
