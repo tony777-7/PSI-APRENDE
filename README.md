@@ -10,7 +10,7 @@ Kevin Estanislao Linares Calatayud
 
 Alan Gutierrez Ali
 
-Descripción del proyecto
+**Descripción del proyecto**
 
 El proyecto consiste en desarrollar un programa básico para PSIAPRENDE que permita registrar, organizar y buscar información de pacientes. Se utilizarán datos ficticios y una base de datos para facilitar el manejo de registros.
 
