@@ -8,6 +8,9 @@ using System.Windows.Forms;
 
 namespace PSI_APRENDE
 {
+    /// <summary>
+    /// interfaz3 avancez--------
+    /// </summary>
     public partial class Form3 : Form
     {
         public Form3()
