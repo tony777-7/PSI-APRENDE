@@ -6,6 +6,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+            
 
         /// <summary>
         /// Clean up any resources being used.
@@ -46,7 +47,7 @@
             textBox2 = new TextBox();
             label3 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
+            txtNombre = new TextBox();
             label1 = new Label();
             tabPage2 = new TabPage();
             dataGridView2 = new DataGridView();
@@ -98,7 +99,7 @@
             tabPage1.Controls.Add(textBox2);
             tabPage1.Controls.Add(label3);
             tabPage1.Controls.Add(label2);
-            tabPage1.Controls.Add(textBox1);
+            tabPage1.Controls.Add(txtNombre);
             tabPage1.Controls.Add(label1);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
@@ -183,6 +184,7 @@
             button1.TabIndex = 9;
             button1.Text = "Guardar";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // dateTimePicker1
             // 
@@ -224,6 +226,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(356, 27);
             textBox2.TabIndex = 1;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // label3
             // 
@@ -238,20 +241,21 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Simple Indust Outline", 12F, FontStyle.Regular, GraphicsUnit.Point, 178);
+            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 178);
             label2.Location = new Point(8, 13);
             label2.Name = "label2";
-            label2.Size = new Size(472, 36);
+            label2.Size = new Size(367, 25);
             label2.TabIndex = 2;
             label2.Text = "REGISTRAR O MODIFICAR PACIENTE";
             label2.Click += label2_Click;
             // 
-            // textBox1
+            // txtNombre
             // 
-            textBox1.Location = new Point(46, 96);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(305, 27);
-            textBox1.TabIndex = 1;
+            txtNombre.Location = new Point(46, 96);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(305, 27);
+            txtNombre.TabIndex = 1;
+            txtNombre.TextChanged += txtNombre_TextChanged;
             // 
             // label1
             // 
@@ -435,10 +439,10 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Simple Indust Outline", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
+            label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
             label7.Location = new Point(28, 16);
             label7.Name = "label7";
-            label7.Size = new Size(372, 36);
+            label7.Size = new Size(296, 25);
             label7.TabIndex = 0;
             label7.Text = "PROGRAMACION DE CITAS";
             // 
@@ -464,7 +468,7 @@
 
         private TabControl tabpage;
         private TabPage tabPage1;
-        private TextBox textBox1;
+        private TextBox txtNombre;
         private Label label1;
         private TabPage tabPage2;
         private Label label2;
