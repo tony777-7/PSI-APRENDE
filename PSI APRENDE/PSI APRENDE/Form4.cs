@@ -28,7 +28,7 @@ namespace PSI_APRENDE
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" ||textBox2.Text=="" ||comboBox1.Text=="" ||combo
+           
 
 
         }

@@ -76,6 +76,7 @@
             button3.TabIndex = 3;
             button3.Text = "ADMINISTRACION DE SISTEMA";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click_1;
             // 
             // button4
             // 
@@ -85,6 +86,7 @@
             button4.TabIndex = 4;
             button4.Text = "CERRAR SESION";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click_1;
             // 
             // Form2
             // 

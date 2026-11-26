@@ -98,9 +98,39 @@ namespace PSI_APRENDE
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            Form4 seguimiento=new Form4();
+            Form4 seguimiento = new Form4();
             seguimiento.Show();
             this.Hide();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Form5 adminForm = new Form5();
+            adminForm.Show();
+            this.Hide();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            DialogResult confirmacion = MessageBox.Show(
+        "¿Seguro que deseas cerrar sesión?",
+        "Cerrar sesión",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Question
+    );
+
+            if (confirmacion != DialogResult.Yes)
+            {
+                return;
+            }
+            Form1? login = Application.OpenForms.OfType<Form1>().FirstOrDefault();
+            if (login == null)
+            {
+                login = new Form1();
+            }
+
+            login.Show();
+            this.Close();
         }
     }
 }
