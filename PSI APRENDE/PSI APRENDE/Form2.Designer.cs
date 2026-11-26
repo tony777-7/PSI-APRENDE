@@ -2,14 +2,9 @@
 {
     partial class Form2
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
+
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
@@ -65,7 +60,7 @@
             button2.TabIndex = 2;
             button2.Text = "SEGUIMIENTO DE ATENCIONES";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click_1;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -76,7 +71,7 @@
             button3.TabIndex = 3;
             button3.Text = "ADMINISTRACION DE SISTEMA";
             button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click_1;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -86,7 +81,7 @@
             button4.TabIndex = 4;
             button4.Text = "CERRAR SESION";
             button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click_1;
+            button4.Click += button4_Click;
             // 
             // Form2
             // 

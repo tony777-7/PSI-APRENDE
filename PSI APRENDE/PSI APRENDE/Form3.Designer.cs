@@ -2,15 +2,11 @@
 {
     partial class Form3
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
+
         private System.ComponentModel.IContainer components = null;
             
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
+
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
@@ -23,10 +19,7 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
+
         private void InitializeComponent()
         {
             tabpage = new TabControl();
@@ -36,6 +29,7 @@
             Nombre = new DataGridViewTextBoxColumn();
             Apellido = new DataGridViewTextBoxColumn();
             Telefono = new DataGridViewTextBoxColumn();
+            FechaNacimiento = new DataGridViewTextBoxColumn();
             label6 = new Label();
             button3 = new Button();
             button2 = new Button();
@@ -113,7 +107,7 @@
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Nombre, Apellido, Telefono });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Nombre, Apellido, Telefono, FechaNacimiento });
             dataGridView1.Location = new Point(8, 383);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
@@ -144,6 +138,12 @@
             Telefono.HeaderText = "Telefono";
             Telefono.MinimumWidth = 6;
             Telefono.Name = "Telefono";
+            //
+            // FechaNacimiento
+            //
+            FechaNacimiento.HeaderText = "Fecha de nacimiento";
+            FechaNacimiento.MinimumWidth = 6;
+            FechaNacimiento.Name = "FechaNacimiento";
             // 
             // label6
             // 
@@ -164,6 +164,7 @@
             button3.TabIndex = 11;
             button3.Text = "Limpiar";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -174,6 +175,7 @@
             button2.TabIndex = 10;
             button2.Text = "Modificar";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -346,6 +348,7 @@
             button6.TabIndex = 12;
             button6.Text = "Cancelar";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
@@ -356,6 +359,7 @@
             button5.TabIndex = 11;
             button5.Text = "Modificar";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
@@ -366,6 +370,7 @@
             button4.TabIndex = 10;
             button4.Text = "Registrar cita";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // textBox7
             // 
@@ -487,6 +492,7 @@
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Apellido;
         private DataGridViewTextBoxColumn Telefono;
+        private DataGridViewTextBoxColumn FechaNacimiento;
         private TextBox textBox7;
         private TextBox textBox6;
         private TextBox textBox5;
