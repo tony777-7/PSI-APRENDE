@@ -95,5 +95,12 @@ namespace PSI_APRENDE
                 Application.Exit();
             }
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Form4 seguimiento=new Form4();
+            seguimiento.Show();
+            this.Hide();
+        }
     }
 }
