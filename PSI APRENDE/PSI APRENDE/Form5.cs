@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace PSI_APRENDE
@@ -18,77 +12,64 @@ namespace PSI_APRENDE
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        // BOTON GUARDAR PROFESIONAL
         private void button1_Click(object sender, EventArgs e)
         {
-            string codigo = textBox1.Text.Trim();
-            string nombre = textBox2.Text.Trim();
-            string telefono = textBox3.Text.Trim();
-            string especialidad = textBox4.Text.Trim();
-
-            // 1. Campos obligatorios
-            if (string.IsNullOrWhiteSpace(codigo) ||
-                string.IsNullOrWhiteSpace(nombre) ||
-                string.IsNullOrWhiteSpace(telefono) ||
-                string.IsNullOrWhiteSpace(especialidad))
+            if (textBox1.Text == "" || textBox2.Text == "" ||
+                textBox3.Text == "" || textBox4.Text == "")
             {
-                MessageBox.Show("Complete todos los campos antes de guardar.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                MessageBox.Show("Complete todos los campos");
             }
-
-            // 2. Longitud mínima de nombre y especialidad
-            if (nombre.Length < 3 || especialidad.Length < 3)
+            else if (textBox2.Text.Length < 3)
             {
-                MessageBox.Show("El nombre y la especialidad deben tener al menos 3 caracteres.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                MessageBox.Show("Ingrese un nombre válido");
             }
-
-            // 3. Teléfono solo dígitos (7 u 8 números)
-            if (!telefono.All(char.IsDigit) || telefono.Length < 7 || telefono.Length > 8)
+            else if (textBox3.Text.Length < 7 || textBox3.Text.Length > 8)
             {
-                MessageBox.Show("El teléfono debe contener entre 7 y 8 dígitos numéricos.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                textBox3.Focus();
-                return;
+                MessageBox.Show("El teléfono debe tener 7 u 8 números");
             }
-
-            // 4. Evitar código duplicado en dataGridView1
-            foreach (DataGridViewRow fila in dataGridView1.Rows)
+            else
             {
-                if (!fila.IsNewRow && fila.Cells[0].Value != null &&
-                    fila.Cells[0].Value.ToString().Equals(codigo, StringComparison.OrdinalIgnoreCase))
+                bool repetido = false;
+
+                foreach (DataGridViewRow fila in dataGridView1.Rows)
                 {
-                    MessageBox.Show("Ese código profesional ya está registrado.", "Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    textBox1.Focus();
-                    return;
+                    if (!fila.IsNewRow && fila.Cells[0].Value != null)
+                    {
+                        string codigoExistente = Convert.ToString(fila.Cells[0].Value);
+                        if (codigoExistente == textBox1.Text)
+                        {
+                            repetido = true;
+                        }
+                    }
                 }
-            }
 
-            // 5. Agregar fila a dataGridView1 y limpiar campos
-            dataGridView1.Rows.Add(codigo, nombre, especialidad);
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
-            textBox1.Focus();
+                if (repetido == true)
+                {
+                    MessageBox.Show("El código profesional ya existe");
+                }
+                else
+                {
+                    dataGridView1.Rows.Add(
+                        textBox1.Text,
+                        textBox2.Text,
+                        textBox3.Text,
+                        textBox4.Text
+                    );
 
-            MessageBox.Show("Profesional guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+                    MessageBox.Show("Profesional registrado correctamente");
 
-        private void SoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void SoloLetras_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
-            {
-                e.Handled = true;
+                    textBox1.Clear();
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    textBox4.Clear();
+                }
             }
         }
     }

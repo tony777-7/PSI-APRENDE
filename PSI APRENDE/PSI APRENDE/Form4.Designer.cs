@@ -45,9 +45,12 @@
             button1 = new Button();
             label8 = new Label();
             dataGridView1 = new DataGridView();
+            Paciente = new DataGridViewTextBoxColumn();
             Fecha = new DataGridViewTextBoxColumn();
             Tipo = new DataGridViewTextBoxColumn();
             Estado = new DataGridViewTextBoxColumn();
+            Profesional = new DataGridViewTextBoxColumn();
+            Actividad = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -55,9 +58,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Perpetua Titling MT", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(37, 30);
+            label1.Location = new Point(32, 22);
             label1.Name = "label1";
-            label1.Size = new Size(386, 28);
+            label1.Size = new Size(319, 23);
             label1.TabIndex = 0;
             label1.Text = "SEGUIMIENTO DE ATENCIONES";
             // 
@@ -65,17 +68,18 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(51, 76);
+            label2.Location = new Point(45, 57);
             label2.Name = "label2";
-            label2.Size = new Size(132, 25);
+            label2.Size = new Size(111, 20);
             label2.TabIndex = 1;
             label2.Text = "Buscar Paciente";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(51, 108);
+            textBox1.Location = new Point(45, 81);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(968, 27);
+            textBox1.Size = new Size(848, 23);
             textBox1.TabIndex = 2;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
@@ -83,43 +87,45 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(49, 163);
+            label3.Location = new Point(43, 122);
             label3.Name = "label3";
-            label3.Size = new Size(137, 25);
+            label3.Size = new Size(113, 20);
             label3.TabIndex = 3;
             label3.Text = "Fecha de sesion";
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(51, 194);
+            dateTimePicker1.Location = new Point(45, 146);
+            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(383, 27);
+            dateTimePicker1.Size = new Size(336, 23);
             dateTimePicker1.TabIndex = 4;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(567, 163);
+            label4.Location = new Point(496, 122);
             label4.Name = "label4";
-            label4.Size = new Size(144, 25);
+            label4.Size = new Size(121, 20);
             label4.TabIndex = 5;
             label4.Text = "Tipo de atencion";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(567, 196);
+            textBox2.Location = new Point(496, 147);
+            textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(448, 27);
+            textBox2.Size = new Size(392, 23);
             textBox2.TabIndex = 6;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(567, 237);
+            label5.Location = new Point(496, 178);
             label5.Name = "label5";
-            label5.Size = new Size(194, 25);
+            label5.Size = new Size(161, 20);
             label5.TabIndex = 7;
             label5.Text = "Estado de seguimiento";
             // 
@@ -127,49 +133,53 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(51, 237);
+            label6.Location = new Point(45, 178);
             label6.Name = "label6";
-            label6.Size = new Size(100, 25);
+            label6.Size = new Size(83, 20);
             label6.TabIndex = 8;
             label6.Text = "Profesional";
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(567, 277);
+            textBox3.Location = new Point(496, 208);
+            textBox3.Margin = new Padding(3, 2, 3, 2);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(452, 27);
+            textBox3.Size = new Size(396, 23);
             textBox3.TabIndex = 9;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(51, 277);
+            textBox4.Location = new Point(45, 208);
+            textBox4.Margin = new Padding(3, 2, 3, 2);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(383, 27);
+            textBox4.Size = new Size(336, 23);
             textBox4.TabIndex = 10;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(51, 326);
+            label7.Location = new Point(45, 244);
             label7.Name = "label7";
-            label7.Size = new Size(160, 25);
+            label7.Size = new Size(137, 20);
             label7.TabIndex = 11;
             label7.Text = "Actividad realizada";
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(47, 361);
+            textBox5.Location = new Point(41, 271);
+            textBox5.Margin = new Padding(3, 2, 3, 2);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(968, 27);
+            textBox5.Size = new Size(848, 23);
             textBox5.TabIndex = 12;
             // 
             // button2
             // 
             button2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(590, 422);
+            button2.Location = new Point(516, 316);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(347, 48);
+            button2.Size = new Size(304, 36);
             button2.TabIndex = 14;
             button2.Text = "Consultar historial";
             button2.UseVisualStyleBackColor = true;
@@ -178,9 +188,10 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(76, 422);
+            button1.Location = new Point(66, 316);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(347, 48);
+            button1.Size = new Size(304, 36);
             button1.TabIndex = 15;
             button1.Text = "Guardar sesion";
             button1.UseVisualStyleBackColor = true;
@@ -190,9 +201,9 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(47, 482);
+            label8.Location = new Point(41, 362);
             label8.Name = "label8";
-            label8.Size = new Size(291, 25);
+            label8.Size = new Size(234, 20);
             label8.TabIndex = 16;
             label8.Text = "Historial de sesiones del paciente";
             // 
@@ -200,12 +211,19 @@
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Fecha, Tipo, Estado });
-            dataGridView1.Location = new Point(37, 520);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Paciente, Fecha, Tipo, Estado, Profesional, Actividad });
+            dataGridView1.Location = new Point(32, 390);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1033, 200);
+            dataGridView1.Size = new Size(904, 150);
             dataGridView1.TabIndex = 17;
+            // 
+            // Paciente
+            // 
+            Paciente.HeaderText = "Paciente";
+            Paciente.MinimumWidth = 6;
+            Paciente.Name = "Paciente";
             // 
             // Fecha
             // 
@@ -222,14 +240,23 @@
             // Estado
             // 
             Estado.HeaderText = "Estado";
-            Estado.MinimumWidth = 6;
             Estado.Name = "Estado";
+            // 
+            // Profesional
+            // 
+            Profesional.HeaderText = "Profesional";
+            Profesional.Name = "Profesional";
+            // 
+            // Actividad
+            // 
+            Actividad.HeaderText = "Actividad realizada";
+            Actividad.Name = "Actividad";
             // 
             // Form4
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1186, 732);
+            ClientSize = new Size(1038, 549);
             Controls.Add(dataGridView1);
             Controls.Add(label8);
             Controls.Add(button1);
@@ -247,6 +274,7 @@
             Controls.Add(textBox1);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form4";
             Text = "Seguimiento de Atenciones";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -273,8 +301,11 @@
         private Button button1;
         private Label label8;
         private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Paciente;
         private DataGridViewTextBoxColumn Fecha;
         private DataGridViewTextBoxColumn Tipo;
         private DataGridViewTextBoxColumn Estado;
+        private DataGridViewTextBoxColumn Profesional;
+        private DataGridViewTextBoxColumn Actividad;
     }
 }
