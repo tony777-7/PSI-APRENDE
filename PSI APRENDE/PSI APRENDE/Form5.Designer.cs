@@ -22,6 +22,10 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             dataGridView1 = new DataGridView();
+            Codigo = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Telefono = new DataGridViewTextBoxColumn();
+            Especialidad = new DataGridViewTextBoxColumn();
             label4 = new Label();
             button1 = new Button();
             textBox4 = new TextBox();
@@ -49,10 +53,7 @@
             label8 = new Label();
             label7 = new Label();
             label5 = new Label();
-            Codigo = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            Telefono = new DataGridViewTextBoxColumn();
-            Especialidad = new DataGridViewTextBoxColumn();
+            button4 = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -106,6 +107,29 @@
             dataGridView1.Size = new Size(945, 188);
             dataGridView1.TabIndex = 18;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // Codigo
+            // 
+            Codigo.HeaderText = "Codigo";
+            Codigo.MinimumWidth = 6;
+            Codigo.Name = "Codigo";
+            // 
+            // Nombre
+            // 
+            Nombre.HeaderText = "Nombre";
+            Nombre.MinimumWidth = 6;
+            Nombre.Name = "Nombre";
+            // 
+            // Telefono
+            // 
+            Telefono.HeaderText = "Teléfono";
+            Telefono.Name = "Telefono";
+            // 
+            // Especialidad
+            // 
+            Especialidad.HeaderText = "Especialidad";
+            Especialidad.MinimumWidth = 6;
+            Especialidad.Name = "Especialidad";
             // 
             // label4
             // 
@@ -280,6 +304,7 @@
             button3.TabIndex = 19;
             button3.Text = "Crear cuenta";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -291,6 +316,7 @@
             button2.TabIndex = 18;
             button2.Text = "Desactivar cuenta";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // textBox8
             // 
@@ -364,34 +390,22 @@
             label5.TabIndex = 10;
             label5.Text = "Profesional asociado";
             // 
-            // Codigo
+            // button4
             // 
-            Codigo.HeaderText = "Codigo";
-            Codigo.MinimumWidth = 6;
-            Codigo.Name = "Codigo";
-            // 
-            // Nombre
-            // 
-            Nombre.HeaderText = "Nombre";
-            Nombre.MinimumWidth = 6;
-            Nombre.Name = "Nombre";
-            // 
-            // Telefono
-            // 
-            Telefono.HeaderText = "Teléfono";
-            Telefono.Name = "Telefono";
-            // 
-            // Especialidad
-            // 
-            Especialidad.HeaderText = "Especialidad";
-            Especialidad.MinimumWidth = 6;
-            Especialidad.Name = "Especialidad";
+            button4.Location = new Point(238, 531);
+            button4.Name = "button4";
+            button4.Size = new Size(399, 49);
+            button4.TabIndex = 1;
+            button4.Text = "Menu Principal";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(966, 512);
+            ClientSize = new Size(966, 592);
+            Controls.Add(button4);
             Controls.Add(tabControl1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form5";
@@ -442,5 +456,6 @@
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Telefono;
         private DataGridViewTextBoxColumn Especialidad;
+        private Button button4;
     }
 }

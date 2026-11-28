@@ -62,6 +62,7 @@
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
+            button7 = new Button();
             tabpage.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -74,9 +75,10 @@
             tabpage.Controls.Add(tabPage1);
             tabpage.Controls.Add(tabPage2);
             tabpage.Location = new Point(0, 0);
+            tabpage.Margin = new Padding(3, 2, 3, 2);
             tabpage.Name = "tabpage";
             tabpage.SelectedIndex = 0;
-            tabpage.Size = new Size(951, 676);
+            tabpage.Size = new Size(832, 507);
             tabpage.TabIndex = 0;
             // 
             // tabPage1
@@ -95,10 +97,11 @@
             tabPage1.Controls.Add(label2);
             tabPage1.Controls.Add(txtNombre);
             tabPage1.Controls.Add(label1);
-            tabPage1.Location = new Point(4, 29);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Margin = new Padding(3, 2, 3, 2);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(943, 643);
+            tabPage1.Padding = new Padding(3, 2, 3, 2);
+            tabPage1.Size = new Size(824, 479);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Pacientes";
             tabPage1.UseVisualStyleBackColor = true;
@@ -108,11 +111,13 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Nombre, Apellido, Telefono, FechaNacimiento });
-            dataGridView1.Location = new Point(8, 383);
+            dataGridView1.Location = new Point(7, 287);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(922, 248);
+            dataGridView1.Size = new Size(807, 186);
             dataGridView1.TabIndex = 13;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_1;
             // 
             // ID
@@ -138,9 +143,9 @@
             Telefono.HeaderText = "Telefono";
             Telefono.MinimumWidth = 6;
             Telefono.Name = "Telefono";
-            //
+            // 
             // FechaNacimiento
-            //
+            // 
             FechaNacimiento.HeaderText = "Fecha de nacimiento";
             FechaNacimiento.MinimumWidth = 6;
             FechaNacimiento.Name = "FechaNacimiento";
@@ -149,18 +154,19 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(25, 345);
+            label6.Location = new Point(22, 259);
             label6.Name = "label6";
-            label6.Size = new Size(223, 24);
+            label6.Size = new Size(184, 19);
             label6.TabIndex = 12;
             label6.Text = "LISTA DE PACIENTES";
             // 
             // button3
             // 
             button3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.Location = new Point(660, 249);
+            button3.Location = new Point(578, 187);
+            button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(213, 52);
+            button3.Size = new Size(186, 39);
             button3.TabIndex = 11;
             button3.Text = "Limpiar";
             button3.UseVisualStyleBackColor = true;
@@ -169,9 +175,10 @@
             // button2
             // 
             button2.Font = new Font("Yu Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(356, 249);
+            button2.Location = new Point(312, 187);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(213, 52);
+            button2.Size = new Size(186, 39);
             button2.TabIndex = 10;
             button2.Text = "Modificar";
             button2.UseVisualStyleBackColor = true;
@@ -180,9 +187,10 @@
             // button1
             // 
             button1.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(56, 249);
+            button1.Location = new Point(49, 187);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(213, 52);
+            button1.Size = new Size(186, 39);
             button1.TabIndex = 9;
             button1.Text = "Guardar";
             button1.UseVisualStyleBackColor = true;
@@ -190,25 +198,27 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(466, 178);
+            dateTimePicker1.Location = new Point(408, 134);
+            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(356, 27);
+            dateTimePicker1.Size = new Size(312, 23);
             dateTimePicker1.TabIndex = 8;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(46, 178);
+            textBox3.Location = new Point(40, 134);
+            textBox3.Margin = new Padding(3, 2, 3, 2);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(305, 27);
+            textBox3.Size = new Size(267, 23);
             textBox3.TabIndex = 6;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(466, 144);
+            label5.Location = new Point(408, 108);
             label5.Name = "label5";
-            label5.Size = new Size(169, 23);
+            label5.Size = new Size(138, 19);
             label5.TabIndex = 5;
             label5.Text = "Fecha de nacimiento";
             // 
@@ -216,17 +226,18 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(46, 144);
+            label4.Location = new Point(40, 108);
             label4.Name = "label4";
-            label4.Size = new Size(75, 23);
+            label4.Size = new Size(63, 19);
             label4.TabIndex = 4;
             label4.Text = "Telefono";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(466, 96);
+            textBox2.Location = new Point(408, 72);
+            textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(356, 27);
+            textBox2.Size = new Size(312, 23);
             textBox2.TabIndex = 1;
             textBox2.TextChanged += textBox2_TextChanged;
             // 
@@ -234,9 +245,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(466, 58);
+            label3.Location = new Point(408, 44);
             label3.Name = "label3";
-            label3.Size = new Size(72, 23);
+            label3.Size = new Size(61, 19);
             label3.TabIndex = 3;
             label3.Text = "Apellido";
             // 
@@ -244,18 +255,19 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 178);
-            label2.Location = new Point(8, 13);
+            label2.Location = new Point(7, 10);
             label2.Name = "label2";
-            label2.Size = new Size(367, 25);
+            label2.Size = new Size(299, 20);
             label2.TabIndex = 2;
             label2.Text = "REGISTRAR O MODIFICAR PACIENTE";
             label2.Click += label2_Click;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(46, 96);
+            txtNombre.Location = new Point(40, 72);
+            txtNombre.Margin = new Padding(3, 2, 3, 2);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(305, 27);
+            txtNombre.Size = new Size(267, 23);
             txtNombre.TabIndex = 1;
             txtNombre.TextChanged += txtNombre_TextChanged;
             // 
@@ -263,9 +275,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(46, 58);
+            label1.Location = new Point(40, 44);
             label1.Name = "label1";
-            label1.Size = new Size(73, 23);
+            label1.Size = new Size(60, 19);
             label1.TabIndex = 0;
             label1.Text = "Nombre";
             // 
@@ -285,10 +297,11 @@
             tabPage2.Controls.Add(label9);
             tabPage2.Controls.Add(label8);
             tabPage2.Controls.Add(label7);
-            tabPage2.Location = new Point(4, 29);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Margin = new Padding(3, 2, 3, 2);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(943, 643);
+            tabPage2.Padding = new Padding(3, 2, 3, 2);
+            tabPage2.Size = new Size(824, 479);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Citas";
             tabPage2.UseVisualStyleBackColor = true;
@@ -298,10 +311,11 @@
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Paciente, Profesional, Fecha, Estado });
-            dataGridView2.Location = new Point(28, 424);
+            dataGridView2.Location = new Point(24, 318);
+            dataGridView2.Margin = new Padding(3, 2, 3, 2);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(893, 207);
+            dataGridView2.Size = new Size(781, 155);
             dataGridView2.TabIndex = 14;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
@@ -333,18 +347,19 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(28, 377);
+            label12.Location = new Point(24, 283);
             label12.Name = "label12";
-            label12.Size = new Size(226, 24);
+            label12.Size = new Size(185, 19);
             label12.TabIndex = 13;
             label12.Text = "CITAS REGISTRADAS";
             // 
             // button6
             // 
             button6.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button6.Location = new Point(657, 291);
+            button6.Location = new Point(575, 218);
+            button6.Margin = new Padding(3, 2, 3, 2);
             button6.Name = "button6";
-            button6.Size = new Size(213, 52);
+            button6.Size = new Size(186, 39);
             button6.TabIndex = 12;
             button6.Text = "Cancelar";
             button6.UseVisualStyleBackColor = true;
@@ -353,9 +368,10 @@
             // button5
             // 
             button5.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button5.Location = new Point(357, 291);
+            button5.Location = new Point(312, 218);
+            button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
-            button5.Size = new Size(213, 52);
+            button5.Size = new Size(186, 39);
             button5.TabIndex = 11;
             button5.Text = "Modificar";
             button5.UseVisualStyleBackColor = true;
@@ -364,9 +380,10 @@
             // button4
             // 
             button4.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Location = new Point(53, 291);
+            button4.Location = new Point(46, 218);
+            button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(213, 52);
+            button4.Size = new Size(186, 39);
             button4.TabIndex = 10;
             button4.Text = "Registrar cita";
             button4.UseVisualStyleBackColor = true;
@@ -374,39 +391,43 @@
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(572, 223);
+            textBox7.Location = new Point(500, 167);
+            textBox7.Margin = new Padding(3, 2, 3, 2);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(330, 27);
+            textBox7.Size = new Size(289, 23);
             textBox7.TabIndex = 8;
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(44, 223);
+            textBox6.Location = new Point(38, 167);
+            textBox6.Margin = new Padding(3, 2, 3, 2);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(330, 27);
+            textBox6.Size = new Size(289, 23);
             textBox6.TabIndex = 7;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(572, 115);
+            textBox5.Location = new Point(500, 86);
+            textBox5.Margin = new Padding(3, 2, 3, 2);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(330, 27);
+            textBox5.Size = new Size(289, 23);
             textBox5.TabIndex = 6;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(44, 115);
+            textBox4.Location = new Point(38, 86);
+            textBox4.Margin = new Padding(3, 2, 3, 2);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(330, 27);
+            textBox4.Size = new Size(289, 23);
             textBox4.TabIndex = 5;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Variable Display", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(44, 187);
+            label11.Location = new Point(38, 140);
             label11.Name = "label11";
-            label11.Size = new Size(110, 22);
+            label11.Size = new Size(90, 19);
             label11.TabIndex = 4;
             label11.Text = "Fecha y hora";
             // 
@@ -414,9 +435,9 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI Variable Display", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(44, 78);
+            label10.Location = new Point(38, 58);
             label10.Name = "label10";
-            label10.Size = new Size(83, 24);
+            label10.Size = new Size(68, 20);
             label10.TabIndex = 3;
             label10.Text = "Paciente";
             // 
@@ -424,9 +445,9 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Variable Display", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(572, 78);
+            label9.Location = new Point(500, 58);
             label9.Name = "label9";
-            label9.Size = new Size(99, 22);
+            label9.Size = new Size(82, 19);
             label9.TabIndex = 2;
             label9.Text = "Profesional";
             label9.Click += label9_Click;
@@ -435,9 +456,9 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(572, 187);
+            label8.Location = new Point(500, 140);
             label8.Name = "label8";
-            label8.Size = new Size(123, 20);
+            label8.Size = new Size(96, 16);
             label8.TabIndex = 1;
             label8.Text = "Estado de la cita";
             // 
@@ -445,20 +466,33 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
-            label7.Location = new Point(28, 16);
+            label7.Location = new Point(24, 12);
             label7.Name = "label7";
-            label7.Size = new Size(296, 25);
+            label7.Size = new Size(241, 20);
             label7.TabIndex = 0;
             label7.Text = "PROGRAMACION DE CITAS";
             // 
+            // button7
+            // 
+            button7.Location = new Point(181, 512);
+            button7.Name = "button7";
+            button7.Size = new Size(399, 49);
+            button7.TabIndex = 2;
+            button7.Text = "Menu Principal";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
             // Form3
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(946, 672);
+            ClientSize = new Size(828, 571);
+            Controls.Add(button7);
             Controls.Add(tabpage);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form3";
             Text = "GESTION DE PACIENTES Y CITAS";
+            Load += Form3_Load_1;
             tabpage.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
@@ -511,5 +545,6 @@
         private DataGridViewTextBoxColumn Profesional;
         private DataGridViewTextBoxColumn Fecha;
         private DataGridViewTextBoxColumn Estado;
+        private Button button7;
     }
 }

@@ -38,8 +38,21 @@ namespace PSI_APRENDE
                      textBox3.Text == "1234")
             {
                 Form2 menu = new Form2();
-                menu.Show();
                 this.Hide();
+                if (menu.ShowDialog() == DialogResult.OK)
+                {
+                    textBox1.Clear();
+                    textBox2.Clear();
+                    textBox3.Clear();
+
+                    cont = 0;
+
+                    this.Show();
+                }
+                else
+                {
+                    this.Close();
+                }
             }
             else
             {

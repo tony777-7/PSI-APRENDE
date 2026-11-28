@@ -11,22 +11,26 @@ namespace PSI_APRENDE
         private void button1_Click(object sender, EventArgs e)
         {
             Form3 pacientes = new Form3();
-            pacientes.Show();
             this.Hide();
+            pacientes.ShowDialog();
+            this.Show();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Form4 seguimiento = new Form4();
-            seguimiento.Show();
             this.Hide();
+            seguimiento.ShowDialog();
+            this.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Form5 administracion = new Form5();
-            administracion.Show();
             this.Hide();
+            administracion.ShowDialog();
+            this.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -40,8 +44,7 @@ namespace PSI_APRENDE
 
             if (respuesta == DialogResult.Yes)
             {
-                Form1 login = new Form1();
-                login.Show();
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
         }

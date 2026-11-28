@@ -72,5 +72,70 @@ namespace PSI_APRENDE
                 }
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (textBox5.Text == "" || textBox6.Text == "" ||
+        textBox7.Text == "" || textBox8.Text == "")
+            {
+                MessageBox.Show("Complete todos los campos");
+                return;
+            }
+
+            bool existeProfesional = false;
+            foreach (DataGridViewRow fila in dataGridView1.Rows)
+            {
+                if (Convert.ToString(fila.Cells[0].Value) == textBox5.Text)
+                {
+                    existeProfesional = true;
+                }
+            }
+
+            if (existeProfesional == false)
+            {
+                MessageBox.Show("El profesional no está registrado");
+                return;
+            }
+            foreach (DataGridViewRow fila in dataGridView2.Rows)
+            {
+                if (Convert.ToString(fila.Cells[0].Value) == textBox6.Text)
+                {
+                    MessageBox.Show("El usuario ya existe");
+                    return;
+                }
+            }
+            dataGridView2.Rows.Add(
+                textBox6.Text,
+                textBox5.Text,
+                textBox8.Text,
+                "Activo"
+            );
+
+            MessageBox.Show("Cuenta creada correctamente");
+            textBox5.Clear();
+            textBox6.Clear();
+            textBox7.Clear();
+            textBox8.Clear();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.CurrentRow == null ||
+        dataGridView2.CurrentRow.IsNewRow)
+            {
+                MessageBox.Show("Seleccione una cuenta");
+            }
+            else
+            {
+                dataGridView2.CurrentRow.Cells[3].Value = "Inactivo";
+
+                MessageBox.Show("Cuenta desactivada correctamente");
+            }
+        }
     }
 }

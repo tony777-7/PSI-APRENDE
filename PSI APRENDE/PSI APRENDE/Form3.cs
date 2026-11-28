@@ -208,7 +208,7 @@ namespace PSI_APRENDE
         {
             LimpiarCampos();
         }
-        
+
         // LIMPIAR CAMPOS
         private void LimpiarCampos()
         {
@@ -221,12 +221,7 @@ namespace PSI_APRENDE
         // BOTON REGISTRAR CITA
         private void button4_Click(object sender, EventArgs e)
         {
-            if (textBox4.Text == "" || textBox5.Text == "" ||
-                textBox6.Text == "" || textBox7.Text == "")
-            {
-                MessageBox.Show("Complete todos los campos");
-            }
-            else
+            if (ValidarCita() == true)
             {
                 dataGridView2.Rows.Add(
                     textBox4.Text,
@@ -236,11 +231,7 @@ namespace PSI_APRENDE
                 );
 
                 MessageBox.Show("Cita registrada correctamente");
-
-                textBox4.Clear();
-                textBox5.Clear();
-                textBox6.Clear();
-                textBox7.Clear();
+                LimpiarCita();
             }
         }
 
@@ -249,37 +240,94 @@ namespace PSI_APRENDE
         private void button5_Click(object sender, EventArgs e)
         {
             if (dataGridView2.CurrentRow == null ||
-                dataGridView2.CurrentRow.IsNewRow)
+       dataGridView2.CurrentRow.IsNewRow)
             {
                 MessageBox.Show("Seleccione una cita");
             }
             else
             {
-                int fila = dataGridView2.CurrentRow.Index;
+                if (ValidarCita() == true)
+                {
+                    int fila = dataGridView2.CurrentRow.Index;
 
-                dataGridView2.Rows[fila].Cells[0].Value = textBox4.Text;
-                dataGridView2.Rows[fila].Cells[1].Value = textBox5.Text;
-                dataGridView2.Rows[fila].Cells[2].Value = textBox6.Text;
-                dataGridView2.Rows[fila].Cells[3].Value = textBox7.Text;
+                    dataGridView2.Rows[fila].Cells[0].Value = textBox4.Text;
+                    dataGridView2.Rows[fila].Cells[1].Value = textBox5.Text;
+                    dataGridView2.Rows[fila].Cells[2].Value = textBox6.Text;
+                    dataGridView2.Rows[fila].Cells[3].Value = textBox7.Text;
 
-                MessageBox.Show("Cita modificada correctamente");
+                    MessageBox.Show("Cita modificada correctamente");
+                }
             }
         }
 
         // BOTON CANCELAR CITA
         private void button6_Click(object sender, EventArgs e)
         {
-            if (dataGridView2.CurrentRow == null ||
-                dataGridView2.CurrentRow.IsNewRow)
+            if (dataGridView2.CurrentRow == null || dataGridView2.CurrentRow.IsNewRow)
             {
                 MessageBox.Show("Seleccione una cita");
             }
             else
             {
-                dataGridView2.Rows.Remove(dataGridView2.CurrentRow);
-
+                dataGridView2.CurrentRow.Cells["Estado"].Value = "Cancelada";
                 MessageBox.Show("Cita cancelada correctamente");
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int fila = e.RowIndex;
+                txtNombre.Text = dataGridView1.Rows[fila].Cells[1].Value.ToString();
+                textBox2.Text = dataGridView1.Rows[fila].Cells[2].Value.ToString();
+                textBox3.Text = dataGridView1.Rows[fila].Cells[3].Value.ToString();
+                dateTimePicker1.Value = Convert.ToDateTime(
+                    dataGridView1.Rows[fila].Cells[4].Value);
+            }
+        }
+
+        private void Form3_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool ValidarCita()
+        {
+            if (textBox4.Text == "" ||
+                textBox5.Text == "" ||
+                textBox6.Text == "" ||
+                textBox7.Text == "")
+            {
+                MessageBox.Show("Complete todos los campos de la cita");
+                return false;
+            }
+            // Comprobar que la fecha sea válida
+            DateTime fecha;
+            if (DateTime.TryParse(textBox5.Text, out fecha) == false)
+            {
+                MessageBox.Show("Ingrese una fecha válida");
+                return false;
+            }
+            // No permitir fechas anteriores a hoy
+            if (fecha.Date < DateTime.Today)
+            {
+                MessageBox.Show("No puede registrar citas en fechas pasadas");
+                return false;
+            }
+            return true;
+        }
+        private void LimpiarCita()
+        {
+            textBox4.Clear();
+            textBox5.Clear();
+            textBox6.Clear();
+            textBox7.Clear();
         }
 
     }

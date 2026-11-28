@@ -51,16 +51,17 @@
             Estado = new DataGridViewTextBoxColumn();
             Profesional = new DataGridViewTextBoxColumn();
             Actividad = new DataGridViewTextBoxColumn();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Perpetua Titling MT", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(32, 22);
             label1.Name = "label1";
-            label1.Size = new Size(319, 23);
+            label1.Size = new Size(324, 24);
             label1.TabIndex = 0;
             label1.Text = "SEGUIMIENTO DE ATENCIONES";
             // 
@@ -252,11 +253,22 @@
             Actividad.HeaderText = "Actividad realizada";
             Actividad.Name = "Actividad";
             // 
+            // button4
+            // 
+            button4.Location = new Point(258, 554);
+            button4.Name = "button4";
+            button4.Size = new Size(399, 49);
+            button4.TabIndex = 18;
+            button4.Text = "Menu Principal";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1038, 549);
+            ClientSize = new Size(1038, 615);
+            Controls.Add(button4);
             Controls.Add(dataGridView1);
             Controls.Add(label8);
             Controls.Add(button1);
@@ -307,5 +319,6 @@
         private DataGridViewTextBoxColumn Estado;
         private DataGridViewTextBoxColumn Profesional;
         private DataGridViewTextBoxColumn Actividad;
+        private Button button4;
     }
 }
