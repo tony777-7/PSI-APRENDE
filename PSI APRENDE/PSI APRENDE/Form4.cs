@@ -86,5 +86,15 @@ namespace PSI_APRENDE
         {
             this.Close();
         }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

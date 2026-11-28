@@ -19,6 +19,8 @@
 
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             dataGridView1 = new DataGridView();
@@ -65,11 +67,12 @@
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
+            tabControl1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tabControl1.Location = new Point(0, 0);
             tabControl1.Margin = new Padding(3, 2, 3, 2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(967, 516);
+            tabControl1.Size = new Size(950, 520);
             tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -85,11 +88,11 @@
             tabPage1.Controls.Add(label2);
             tabPage1.Controls.Add(label1);
             tabPage1.Controls.Add(label6);
-            tabPage1.Location = new Point(4, 24);
+            tabPage1.Location = new Point(4, 29);
             tabPage1.Margin = new Padding(3, 2, 3, 2);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3, 2, 3, 2);
-            tabPage1.Size = new Size(959, 488);
+            tabPage1.Size = new Size(942, 487);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Profesionales";
             tabPage1.UseVisualStyleBackColor = true;
@@ -97,14 +100,30 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(23, 107, 115);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView1.ColumnHeadersHeight = 35;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Codigo, Nombre, Telefono, Especialidad });
+            dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.Location = new Point(7, 304);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(945, 188);
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(925, 188);
             dataGridView1.TabIndex = 18;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -113,23 +132,27 @@
             Codigo.HeaderText = "Codigo";
             Codigo.MinimumWidth = 6;
             Codigo.Name = "Codigo";
+            Codigo.ReadOnly = true;
             // 
             // Nombre
             // 
             Nombre.HeaderText = "Nombre";
             Nombre.MinimumWidth = 6;
             Nombre.Name = "Nombre";
+            Nombre.ReadOnly = true;
             // 
             // Telefono
             // 
             Telefono.HeaderText = "Teléfono";
             Telefono.Name = "Telefono";
+            Telefono.ReadOnly = true;
             // 
             // Especialidad
             // 
             Especialidad.HeaderText = "Especialidad";
             Especialidad.MinimumWidth = 6;
             Especialidad.Name = "Especialidad";
+            Especialidad.ReadOnly = true;
             // 
             // label4
             // 
@@ -143,14 +166,20 @@
             // 
             // button1
             // 
-            button1.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 178);
+            button1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button1.BackColor = Color.FromArgb(23, 107, 115);
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 178);
+            button1.ForeColor = Color.White;
             button1.Location = new Point(16, 195);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(916, 39);
             button1.TabIndex = 17;
             button1.Text = "Guardar profesional";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // textBox4
@@ -158,7 +187,7 @@
             textBox4.Location = new Point(480, 142);
             textBox4.Margin = new Padding(3, 2, 3, 2);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(356, 23);
+            textBox4.Size = new Size(356, 27);
             textBox4.TabIndex = 16;
             // 
             // textBox3
@@ -166,7 +195,7 @@
             textBox3.Location = new Point(16, 142);
             textBox3.Margin = new Padding(3, 2, 3, 2);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(356, 23);
+            textBox3.Size = new Size(356, 27);
             textBox3.TabIndex = 15;
             // 
             // textBox2
@@ -174,7 +203,7 @@
             textBox2.Location = new Point(480, 58);
             textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(356, 23);
+            textBox2.Size = new Size(356, 27);
             textBox2.TabIndex = 14;
             // 
             // textBox1
@@ -182,7 +211,7 @@
             textBox1.Location = new Point(16, 58);
             textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(356, 23);
+            textBox1.Size = new Size(356, 27);
             textBox1.TabIndex = 13;
             // 
             // label3
@@ -227,6 +256,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.BackColor = Color.White;
             tabPage2.Controls.Add(dataGridView2);
             tabPage2.Controls.Add(label10);
             tabPage2.Controls.Add(button3);
@@ -239,24 +269,39 @@
             tabPage2.Controls.Add(label8);
             tabPage2.Controls.Add(label7);
             tabPage2.Controls.Add(label5);
-            tabPage2.Location = new Point(4, 24);
+            tabPage2.Location = new Point(4, 29);
             tabPage2.Margin = new Padding(3, 2, 3, 2);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3, 2, 3, 2);
-            tabPage2.Size = new Size(959, 488);
+            tabPage2.Size = new Size(942, 487);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Usuarios";
-            tabPage2.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToDeleteRows = false;
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.BackgroundColor = Color.White;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(23, 107, 115);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridView2.ColumnHeadersHeight = 35;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Usuario, Profesional, Rol, Estado });
+            dataGridView2.EnableHeadersVisualStyles = false;
             dataGridView2.Location = new Point(0, 297);
             dataGridView2.Margin = new Padding(3, 2, 3, 2);
             dataGridView2.Name = "dataGridView2";
+            dataGridView2.ReadOnly = true;
+            dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(957, 184);
             dataGridView2.TabIndex = 21;
             // 
@@ -265,24 +310,28 @@
             Usuario.HeaderText = "Usuario";
             Usuario.MinimumWidth = 6;
             Usuario.Name = "Usuario";
+            Usuario.ReadOnly = true;
             // 
             // Profesional
             // 
             Profesional.HeaderText = "Profesional";
             Profesional.MinimumWidth = 6;
             Profesional.Name = "Profesional";
+            Profesional.ReadOnly = true;
             // 
             // Rol
             // 
             Rol.HeaderText = "Rol";
             Rol.MinimumWidth = 6;
             Rol.Name = "Rol";
+            Rol.ReadOnly = true;
             // 
             // Estado
             // 
             Estado.HeaderText = "Estado";
             Estado.MinimumWidth = 6;
             Estado.Name = "Estado";
+            Estado.ReadOnly = true;
             // 
             // label10
             // 
@@ -296,26 +345,34 @@
             // 
             // button3
             // 
-            button3.Font = new Font("Segoe UI Symbol", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.BackColor = Color.FromArgb(23, 107, 115);
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI Symbol", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.White;
             button3.Location = new Point(32, 194);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
             button3.Size = new Size(385, 43);
             button3.TabIndex = 19;
             button3.Text = "Crear cuenta";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
             // button2
             // 
-            button2.Font = new Font("Segoe UI Historic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.BackColor = Color.FromArgb(230, 90, 97);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
             button2.Location = new Point(496, 194);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(376, 43);
             button2.TabIndex = 18;
             button2.Text = "Desactivar cuenta";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // textBox8
@@ -323,7 +380,7 @@
             textBox8.Location = new Point(496, 141);
             textBox8.Margin = new Padding(3, 2, 3, 2);
             textBox8.Name = "textBox8";
-            textBox8.Size = new Size(377, 23);
+            textBox8.Size = new Size(377, 27);
             textBox8.TabIndex = 17;
             // 
             // textBox7
@@ -331,7 +388,7 @@
             textBox7.Location = new Point(32, 141);
             textBox7.Margin = new Padding(3, 2, 3, 2);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(386, 23);
+            textBox7.Size = new Size(386, 27);
             textBox7.TabIndex = 16;
             // 
             // textBox6
@@ -339,7 +396,7 @@
             textBox6.Location = new Point(496, 66);
             textBox6.Margin = new Padding(3, 2, 3, 2);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(377, 23);
+            textBox6.Size = new Size(377, 27);
             textBox6.TabIndex = 15;
             // 
             // textBox5
@@ -347,7 +404,7 @@
             textBox5.Location = new Point(32, 66);
             textBox5.Margin = new Padding(3, 2, 3, 2);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(386, 23);
+            textBox5.Size = new Size(386, 27);
             textBox5.TabIndex = 14;
             // 
             // label9
@@ -392,24 +449,34 @@
             // 
             // button4
             // 
-            button4.Location = new Point(238, 531);
+            button4.BackColor = Color.FromArgb(23, 107, 115);
+            button4.Cursor = Cursors.Hand;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.ForeColor = Color.White;
+            button4.Location = new Point(373, 525);
             button4.Name = "button4";
-            button4.Size = new Size(399, 49);
+            button4.Size = new Size(220, 42);
             button4.TabIndex = 1;
             button4.Text = "Menu Principal";
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(966, 592);
+            BackColor = Color.FromArgb(232, 244, 243);
+            ClientSize = new Size(984, 611);
             Controls.Add(button4);
             Controls.Add(tabControl1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "Form5";
-            Text = "ADMINISTRACION DEL SISTEMA";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "PSI APRENDE - Administracion del Sistema";
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
