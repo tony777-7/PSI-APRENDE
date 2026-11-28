@@ -48,5 +48,20 @@ namespace PSI_APRENDE
                 this.Close();
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var conexion = Conexion.Conectar())
+                {
+                    MessageBox.Show("¡Conexión exitosa con MySQL!");
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error: " + error.Message);
+            }
+        }
     }
 }
